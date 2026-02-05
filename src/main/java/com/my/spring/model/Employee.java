@@ -5,6 +5,8 @@ public class Employee {
 	private int id;
 	
 	private String name ,gender;
+	
+	private Address address;
 
 	public Employee() {
 		super();
@@ -12,13 +14,26 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int id, String name, String gender) {
+
+	public Employee(int id, String name, String gender, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
-		System.out.println("Employee.Employee(3)");
+		this.address = address;
 	}
+
+
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 
 	public int getId() {
 		return id;
@@ -47,10 +62,13 @@ public class Employee {
 		this.gender = gender;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
 	}
+
+	
 	
 	
 }
