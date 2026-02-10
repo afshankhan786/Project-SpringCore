@@ -22,8 +22,13 @@
     <version>7.0.3</version>
     <scope>compile</scope>
 </dependency>
-  
-  
+
+
+  	<dependency>
+  		<groupId>com.my.hibernate</groupId>
+  		<artifactId>Keshav-Hibernate</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   
   
