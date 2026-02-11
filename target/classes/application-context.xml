@@ -11,78 +11,15 @@
 	<property name="state" value="UP" />
 	</bean>
 
-	<bean name="emp1" class="com.my.spring.model.Employee">
+	<bean name="emp1" class="com.my.spring.model.Employee" autowire="byType" scope="prototype"> <!--byname ,byType,constructor -->
 		<property name="id" value="1"/>
 		<property name="name" value="Ansh"/>
 		<property name="gender" value="Male"/>
-		<property name="address" ref="add"/>
-		<property name="myList">
-			<list>
-			<value>10</value>
-			<value>10</value>
-			<value>20</value>
-			<value>30</value>
-			<value>40</value>
-			<value>50</value>
-			</list>
-		</property>
-		<property name="setOfContacts">
-			<set>
-				<value>100</value>
-				<value>100</value>
-				<value>200</value>
-				<value>300</value>
-				<value>400</value>
-				<value>500</value>
-				<value>600</value>
-			</set>
-		</property>
-		<property name="map">
-			<map>
-				<entry key="1" value="One" />
-				<entry key="2" value="TWO" />
-				<entry key="3" value="THREE" />
-				<entry key="4" value="FOUR" />
-				<entry key="1" value="ONE" />
-			</map>
-		</property>
-		
 	</bean>
 	
-	<bean name="emp2" class="com.my.spring.model.Employee">
+	<bean name="emp2" class="com.my.spring.model.Employee" autowire="constructor">
 		<constructor-arg name="id" value="2"/>
 		<constructor-arg name="name" value="vnsh"/>
 		<constructor-arg name="gender" value="Male"/>
-		<constructor-arg name="address" ref="add"/>
-		<constructor-arg name="myList">
-			<list>
-			<value>10</value>
-			<value>10</value>
-			<value>20</value>
-			<value>30</value>
-			<value>40</value>
-			<value>50</value>
-			</list>
-		</constructor-arg>
-			<constructor-arg name="setOfContacts">
-			<list>
-			<value>100</value>
-			<value>100</value>
-			<value>200</value>
-			<value>300</value>
-			<value>400</value>
-			<value>500</value>
-			<value>600</value>
-			</list>
-		</constructor-arg>
-		<constructor-arg name="map">
-			<map>
-				<entry key="1" value="One" />
-				<entry key="2" value="TWO" />
-				<entry key="3" value="THREE" />
-				<entry key="4" value="FOUR" />
-				<entry key="1" value="ONE" />
-			</map>
-		</constructor-arg>
 	</bean>
 </beans>
