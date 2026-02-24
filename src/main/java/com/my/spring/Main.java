@@ -14,12 +14,8 @@ public class Main {
 		ApplicationContext ioc = new AnnotationConfigApplicationContext("com.my.spring");
 		
 		Employee emp = ioc.getBean(Employee.class);
-		Address add = ioc.getBean(Address.class);
-
-		emp.setName("Anklus");
 		
-	System.out.println(emp);
-	System.out.println(add);
+		System.out.println(emp);
 
 	}
 

@@ -1,29 +1,36 @@
 package com.my.spring.model;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component(value="address1")
-public class Address implements IAddress {
-	private String city= "Rishikesh";
-	private String state= "UK";
-	
-	public Address() {
+@Component(value = "address2")
+//@Primary
+public class Address2 implements IAddress {
+	private String city = "shimla";
+	private String state = "HP";
+
+	public Address2() {
 	}
+
+	@Override
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	@Override
 	public String toString() {
-		return "Address [city=" + city + ", state=" + state + "]";
+		return "Address2 [city=" + city + ", state=" + state + "]";
 	}
-	
 }

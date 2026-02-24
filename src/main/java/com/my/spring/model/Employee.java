@@ -1,81 +1,64 @@
 package com.my.spring.model;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(value = "prototype")
 public class Employee {
-
-	private int id;
-
-	private String name, gender;
-
-	@Autowired
-	private Address address;
-
-
+	
+	private int id =101;
+	private String name="Guest";
+	private int salary = 10_000;
+	
+	
+	private IAddress adddress;
+	
 	public Employee() {
-		super();
-		System.out.println("Employee.Employee()");
-		// TODO Auto-generated constructor stub
+		
 	}
-
-	public Employee(int id, String name, String gender, Address address) {
+	public Employee(int id, String name, int salary) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.gender = gender;
-		this.address = address;
+		this.salary = salary;
 	}
-
 	
-	public Address getAddress() {
-		return address;
+	public Employee(IAddress address) {
+		this.adddress=address;
 	}
-
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
-		System.out.println("Employee.setId()");
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
-		System.out.println("Employee.setName()");
 		this.name = name;
 	}
-
-	public String getGender() {
-		return gender;
+	public int getSalary() {
+		return salary;
 	}
-
-	public void setGender(String gender) {
-		System.out.println("Employee.setGender()");
-		this.gender = gender;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
-
-
+	public IAddress getAdddress() {
+		return adddress;
+	}
+	@Autowired
+	@Qualifier(value = "address1")
+	public void setAdddress(IAddress adddress) {
+		System.out.println("Employee.setAdddress()");
+		this.adddress = adddress;
+	}
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", adddress=" + adddress + "]";
 	}
-
-
 	
 }
