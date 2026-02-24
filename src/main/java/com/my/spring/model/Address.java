@@ -1,11 +1,15 @@
 package com.my.spring.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
 
 	private String city,state;
 
 	public Address() {
 		super();
+	System.out.println("Address.Address()");
 		// TODO Auto-generated constructor stub
 	}
 
